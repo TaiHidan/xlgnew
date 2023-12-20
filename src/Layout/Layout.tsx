@@ -7,8 +7,6 @@ type LayoutProps = {
 
 
 function Layout ({ children }: LayoutProps){
-
-
   return (
     <>
     <Header/>
