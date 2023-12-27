@@ -15,8 +15,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Avatar, Button, Tooltip } from '@mui/material';
+import { Avatar, Button, Tooltip, createTheme } from '@mui/material';
 
+// CSS 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -55,6 +56,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
+// Khoi Tao Ham
+
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -120,14 +124,10 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
+  
+        
+ 
+    
       <MenuItem>
         <IconButton
           size="large"
@@ -160,17 +160,19 @@ export default function PrimarySearchAppBar() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Box sx={{ display: "flex", background_color: "red", width: "100%" }}>
-        <img
+    <Box sx={{ flexGrow: 1  }}>
+      
+        
+        <AppBar sx ={{bgcolor : '#fffff', position:"static"}} >
+       
+          <Toolbar >
+          <img
           src="./public/images/logoxlg.png"
           alt="Logo"
-          style={{ maxWidth: "64px", height: "auto" }}
+          style={{ maxWidth: "64px", height: "40px" }}
         />
-        <AppBar position="static">
-          <Toolbar>
-          <Button color="inherit">Excel</Button>
-            <Search>
+          <Button sx={{ml : '10px'}} color="error">Excel</Button>
+            <Search sx={{mx :'auto'}}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -188,7 +190,7 @@ export default function PrimarySearchAppBar() {
                 color="inherit"
               >
                 <Badge badgeContent={99} color="error">
-                  <NotificationsIcon />
+                  <NotificationsIcon sx={{color : 'orange'}} />
                 </Badge>
               </IconButton>
               <IconButton
@@ -227,7 +229,7 @@ export default function PrimarySearchAppBar() {
         </AppBar>
         {renderMobileMenu}
         {renderMenu}
-      </Box>
+      
     </Box>
   );
 }

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -14,6 +15,15 @@ function App() {
         </Layout>
       }
       />
+       <Route
+      path='/profile'
+      element={
+        <Layout>
+        <Profile/>
+        </Layout>
+      }
+      />
+
 
       <Route 
       path='*'
