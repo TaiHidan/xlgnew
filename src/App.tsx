@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Layout from './Layout';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import "./index.css"
 
 function App() {
   return (
